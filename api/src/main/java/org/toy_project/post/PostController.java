@@ -10,32 +10,41 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/posts/{accountId}")
 public class PostController {
 
     @GetMapping
-    public List<PostResponse> getItems() {
+    public List<PostResponse> getPosts(@PathVariable Long accountId) {
         PostResponse firstPost = PostResponse.builder()
-                .title("게시글 제목")
-                .description("게시글 내용")
-                .imageUrl("https://imageUrl.com")
+                .id(1L)
+                .title("My first ever Met honoring Karl Lagerfeld with @chanelofficial. Merci mon chanel family for this dream look")
+                .description("My first ever Met honoring Karl Lagerfeld with @chanelofficial. Merci mon chanel family for this dream look")
+                .imageUrl("https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/344281307_592826875941624_3520706586042566367_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=F8TuCnTHqwwAX-C-iUm&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzA5MzcwNzg0MzY4NTYxMzM1OQ%3D%3D.2-ccb7-5&oh=00_AfCrgnsqJa3AdIUjCCYrpU20610UTtUAjSD6uoxF96gWqQ&oe=645A05CA&_nc_sid=1527a3")
+                .favoriteCount(989000)
+                .replyCount(888999)
                 .build();
 
         PostResponse secondPost = PostResponse.builder()
-                .title("두번째 게시글 제목")
-                .description("두번째 게시글 내용")
-                .imageUrl("https://imageUrl1.com")
+                .id(2L)
+                .title("@calvinklein \uD83E\uDD8B")
+                .description("@calvinklein \uD83E\uDD8B")
+                .imageUrl("https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/343958130_148245904710363_1719180612311903351_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=oPBKOfFlX7gAX_ELxXs&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzA5Mjc3MTI3MTIzODQzMTAyOA%3D%3D.2-ccb7-5&oh=00_AfCGERkrnzyEV6NilwAjPqqI5XyUhj7YWRvTbJupJmgoxQ&oe=645BBBD4&_nc_sid=1527a3")
+                .favoriteCount(766900)
+                .replyCount(635000)
                 .build();
 
         return Arrays.asList(firstPost, secondPost);
     }
 
-    @GetMapping("/{id}")
-    public PostResponse getItem(@PathVariable Long id) {
+    @GetMapping("/{postId}")
+    public PostResponse getPost(@PathVariable Long accountId, @PathVariable Long postId) {
         return PostResponse.builder()
-                .title("게시글 제목")
-                .description("게시글 내용")
-                .imageUrl("https://imageUrl.com")
+                .id(1L)
+                .title("My first ever Met honoring Karl Lagerfeld with @chanelofficial. Merci mon chanel family for this dream look")
+                .description("My first ever Met honoring Karl Lagerfeld with @chanelofficial. Merci mon chanel family for this dream look")
+                .imageUrl("https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/344281307_592826875941624_3520706586042566367_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=F8TuCnTHqwwAX-C-iUm&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzA5MzcwNzg0MzY4NTYxMzM1OQ%3D%3D.2-ccb7-5&oh=00_AfCrgnsqJa3AdIUjCCYrpU20610UTtUAjSD6uoxF96gWqQ&oe=645A05CA&_nc_sid=1527a3")
+                .favoriteCount(989000)
+                .replyCount(888999)
                 .build();
     }
 }
