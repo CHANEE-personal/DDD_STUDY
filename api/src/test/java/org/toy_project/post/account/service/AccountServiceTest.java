@@ -1,6 +1,5 @@
 package org.toy_project.post.account.service;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,6 +42,7 @@ class AccountServiceTest {
         // then
         assertThat(account.getId()).isEqualTo(1L);
         assertThat(account.getAccountName()).isEqualTo("jennierubyjane");
-        assertThat(account.getFollowCount()).isEqualTo(999);
+        assertThat(account.getFollowCount()).isEqualTo(0);
+        assertThat(account.getFollowerCount()).isEqualTo(999);
     }
 }
