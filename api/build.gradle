@@ -16,7 +16,11 @@ repositories {
 dependencies {
 
     // dependencies alphabet order
-    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor(
+            'org.projectlombok:lombok',
+            'org.projectlombok:lombok-mapstruct-binding:0.1.0',
+            'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    )
 
     compileOnly 'org.projectlombok:lombok'
 
@@ -28,6 +32,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 //    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 
 
     runtimeOnly 'mysql:mysql-connector-java'
