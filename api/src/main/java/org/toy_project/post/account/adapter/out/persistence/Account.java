@@ -1,11 +1,13 @@
-package org.toy_project.post.account.dto;
+package org.toy_project.post.account.adapter.out.persistence;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@Builder
-public class AccountResponse {
+@Setter
+@NoArgsConstructor
+public class Account {
 
     private Long id;
     private String accountName;
@@ -19,12 +21,4 @@ public class AccountResponse {
 
     private int followCount;
     private int followerCount;
-
-    @Getter
-    @Builder
-    public static class AccountImage {
-        private Long id;
-        private String type;
-        private String imageUrl;
-    }
 }

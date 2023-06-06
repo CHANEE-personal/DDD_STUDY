@@ -1,4 +1,4 @@
-package org.toy_project.post.account.model;
+package org.toy_project.post.account.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "account")
-public class Account {
+public class AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +34,6 @@ public class Account {
     @Column(name = "follower_count")
     private int followerCount;
 
-    @OneToOne(mappedBy = "account", fetch = FetchType.LAZY)
-    private AccountImage accountImage;
+    @OneToOne(mappedBy = "accountEntity", fetch = FetchType.LAZY)
+    private AccountImageEntity accountImageEntity;
 }
