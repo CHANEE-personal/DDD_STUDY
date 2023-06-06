@@ -6,11 +6,9 @@ import org.toy_project.post.account.adapter.out.persistence.Account;
 import org.toy_project.post.account.application.port.in.GetAccountUseCase;
 import org.toy_project.post.account.application.port.out.LoadAccountPort;
 
-import java.util.NoSuchElementException;
-
 @Service
 @RequiredArgsConstructor
-public class AccountService implements GetAccountUseCase {
+class AccountService implements GetAccountUseCase {
 
     private final LoadAccountPort loadAccountPort;
 

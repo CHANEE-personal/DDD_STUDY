@@ -34,6 +34,6 @@ public class AccountEntity {
     @Column(name = "follower_count")
     private int followerCount;
 
-    @OneToOne(mappedBy = "account", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "accountEntity", fetch = FetchType.LAZY)
     private AccountImageEntity accountImageEntity;
 }

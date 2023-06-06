@@ -2,11 +2,13 @@ package org.toy_project.post.account.adapter.out.persistence;
 
 import java.util.NoSuchElementException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import org.toy_project.post.account.application.port.out.LoadAccountPort;
 import org.toy_project.post.account.domain.AccountEntity;
 
+@Component
 @RequiredArgsConstructor
-public class AccountPersistenceAdapter implements LoadAccountPort {
+class AccountPersistenceAdapter implements LoadAccountPort {
 
     private final AccountRepository accountRepository;
     private final AccountMapper accountMapper;
