@@ -1,5 +1,7 @@
 package org.toy_project.post.account.adapter.in.web;
 
+import java.util.HashMap;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,11 @@ public class AccountController {
 
 
     @GetMapping("/{accountId}")
-    public ResponseEntity<Account> getAccount(@PathVariable Long accountId) {
+    public ResponseEntity<Map<String, Object>> getAccount(@PathVariable Long accountId) {
+        Map<String, Object> resultMap = new HashMap<>();
         Account account = getAccountUseCase.getAccount(accountId);
-        return ResponseEntity.ok(account);
+
+        resultMap.put("account", account);
+        return ResponseEntity.ok().body(resultMap);
     }
 }

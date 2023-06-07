@@ -19,16 +19,17 @@ public class AccountControllerDocs {
 
 
     private static ResponseFieldsSnippet getResponseFieldsSnippet() {
-        return responseFields(fieldWithPath("id").description("계정 idx"),
-                fieldWithPath("accountName").description("계정명"), fieldWithPath("hashTag").description("해시태그"),
-                fieldWithPath("youtubeUrl").description("유튜브"), fieldWithPath("postCount").description("게시글"),
-                fieldWithPath("followCount").description("팔로우수"), fieldWithPath("followerCount").description("팔로워"),
+        return responseFields(beneathPath("account").withSubsectionId("account-detail"),
+                fieldWithPath("id").description("계정 idx"), fieldWithPath("accountName").description("계정명"),
+                fieldWithPath("hashTag").description("해시태그"), fieldWithPath("youtubeUrl").description("유튜브"),
+                fieldWithPath("postCount").description("게시글"), fieldWithPath("followCount").description("팔로우수"),
+                fieldWithPath("followerCount").description("팔로워"),
                 subsectionWithPath("accountImage").description("<<account-image, 계정 이미지>>"));
     }
 
 
     private static ResponseFieldsSnippet getAccountImageFieldsSnippet() {
-        return responseFields(beneathPath("accountImage").withSubsectionId("account-image"),
+        return responseFields(beneathPath("account.accountImage").withSubsectionId("account-image"),
                 fieldWithPath("id").description("이미지 idx"), fieldWithPath("type").description("계정 Type"),
                 fieldWithPath("imageUrl").description("이미지URL"));
     }

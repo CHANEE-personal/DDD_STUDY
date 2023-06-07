@@ -1,0 +1,24 @@
+:doctype: book
+:toc: left
+:sectnums:
+:toclevels: 2
+:source-highlighter: highlightjs
+
+= accountDetail - 계정 관련
+
+== 계정상세
+
+=== 요청
+
+include::{snippets}/get-account-detail/http-request.adoc[]
+include::{snippets}/get-account-detail/path-parameters.adoc[]
+
+=== 응답
+
+include::{snippets}/get-account-detail/http-response.adoc[]
+include::{snippets}/get-account-detail/response-fields-account-detail.adoc[]
+
+
+=== 계정 이미지[[account-image]]
+
+include::{snippets}/get-account-detail/response-fields-account-image.adoc[]
