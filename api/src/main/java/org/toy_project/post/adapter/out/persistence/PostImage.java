@@ -13,6 +13,4 @@ public class PostImage {
     private String name;
     private String url;
     private Integer sortNo;
-
-    private Post post;
 }

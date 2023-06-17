@@ -23,7 +23,7 @@ import org.toy_project.post.application.port.in.GetPostUseCase;
 @AutoConfigureRestDocs
 @WebMvcTest(controllers = PostController.class, excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE)})
-public class PostControllerTest {
+class PostControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -59,6 +59,7 @@ public class PostControllerTest {
         given(getPostUseCase.getPostList()).willReturn(postList);
         given(getPostUseCase.getPost(1L)).willReturn(post);
     }
+
 
     @Test
     @DisplayName("게시글 리스트 조회")

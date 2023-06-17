@@ -11,6 +11,7 @@ import org.toy_project.post.domain.PostEntity;
 public interface PostMapper {
 
     @Mapping(source = "postImageList", target = "postImages")
+    @Mapping(source = "replies", target = "replies")
     Post toPost(PostEntity postEntity);
 
     List<Post> toPostList(List<PostEntity> postEntityList);

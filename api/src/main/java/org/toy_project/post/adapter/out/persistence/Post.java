@@ -18,6 +18,7 @@ public class Post {
     private Integer viewCount;
     private Integer favoriteCount;
     private Integer replyCount;
+    private Long parentIdx;
     private boolean visible;
 
     private List<PostImage> postImages = new ArrayList<>();
