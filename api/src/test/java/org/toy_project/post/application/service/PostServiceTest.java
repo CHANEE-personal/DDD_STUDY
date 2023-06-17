@@ -45,7 +45,6 @@ class PostServiceTest {
         postImage.setUrl(
                 "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/344281307_592826875941624_3520706586042566367_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=F8TuCnTHqwwAX-C-iUm&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzA5MzcwNzg0MzY4NTYxMzM1OQ%3D%3D.2-ccb7-5&oh=00_AfCrgnsqJa3AdIUjCCYrpU20610UTtUAjSD6uoxF96gWqQ&oe=645A05CA&_nc_sid=1527a3");
         postImage.setSortNo(1);
-        postImage.setPost(post);
 
         post.setPostImages(List.of(postImage));
         postList.add(post);
@@ -77,7 +76,6 @@ class PostServiceTest {
         postImage.setUrl(
                 "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/344281307_592826875941624_3520706586042566367_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=F8TuCnTHqwwAX-C-iUm&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzA5MzcwNzg0MzY4NTYxMzM1OQ%3D%3D.2-ccb7-5&oh=00_AfCrgnsqJa3AdIUjCCYrpU20610UTtUAjSD6uoxF96gWqQ&oe=645A05CA&_nc_sid=1527a3");
         postImage.setSortNo(1);
-        postImage.setPost(post);
 
         post.setPostImages(List.of(postImage));
 
