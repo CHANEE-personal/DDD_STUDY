@@ -1,4 +1,4 @@
-CREATE TABLE `accountEntity`
+CREATE TABLE `account`
 (
     `idx`              int(11)      NOT NULL AUTO_INCREMENT,
     `account_name`     varchar(255) NOT NULL,

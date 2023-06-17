@@ -1,4 +1,4 @@
-INSERT INTO `accountEntity`
+INSERT INTO `account`
 VALUES (1, 'jennierubyjane', '@lesyeuxdenini',
         'https://youtu.be/JyBd-qPKqpU', 89, 0, 999, NOW());
 
