@@ -7,4 +7,5 @@
 
 Instagram API 에 대한 설명 입니다
 
+== xref:post.adoc[Post - 게시글]
 == xref:account.adoc[Account - 계정 상세]

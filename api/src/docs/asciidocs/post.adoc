@@ -1,0 +1,27 @@
+:doctype: book
+:toc: left
+:sectnums:
+:toclevels: 2
+:source-highlighter: highlightjs
+
+= accountDetail - 게시글 관련
+
+== 게시글상세
+
+=== 요청
+
+include::{snippets}/get-post-detail/http-request.adoc[]
+include::{snippets}/get-post-detail/path-parameters.adoc[]
+
+=== 응답
+
+include::{snippets}/get-post-detail/http-response.adoc[]
+include::{snippets}/get-post-detail/response-fields-post-detail.adoc[]
+
+=== 게시글 이미지[[post-image]]
+
+include::{snippets}/get-post-detail/response-fields-post-image.adoc[]
+
+=== 게시글 댓글[[post-reply]]
+
+include::{snippets}/get-post-detail/response-fields-post-reply.adoc[]
