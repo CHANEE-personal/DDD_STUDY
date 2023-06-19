@@ -7,5 +7,5 @@ import reactor.core.publisher.Mono;
 @Component
 public interface LoadAccountPort {
 
-    Account loadAccount(Long id);
+    Mono<Account> loadAccount(Long id);
 }

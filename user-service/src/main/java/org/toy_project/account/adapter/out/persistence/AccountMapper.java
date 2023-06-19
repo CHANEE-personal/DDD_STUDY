@@ -9,6 +9,6 @@ import org.toy_project.account.domain.AccountEntity;
 @Mapper(componentModel = "spring")
 public interface AccountMapper {
 
-    @Mapping(source = "accountImageEntity", target = "accountImage")
+    @Mapping(source = "accountImageEntity", target = "accountImages")
     Account toAccount(AccountEntity accountEntity);
 }

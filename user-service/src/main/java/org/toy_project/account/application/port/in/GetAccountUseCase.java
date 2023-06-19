@@ -7,5 +7,5 @@ import reactor.core.publisher.Mono;
 @Component
 public interface GetAccountUseCase {
 
-    Account getAccount(Long id);
+    Mono<Account> getAccount(Long id);
 }

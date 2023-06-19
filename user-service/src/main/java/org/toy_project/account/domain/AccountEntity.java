@@ -3,6 +3,7 @@ package org.toy_project.account.domain;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -32,4 +33,7 @@ public class AccountEntity {
 
     @Column("follower_count")
     private int followerCount;
+
+    @Transient
+    private AccountImageEntity accountImageEntity;
 }

@@ -12,7 +12,7 @@ public class Account {
     private Long id;
     private String accountName;
 
-    private org.toy_project.account.adapter.out.persistence.AccountImage accountImage;
+    private AccountImage accountImages;
 
     private String hashTag;
     private String youtubeUrl;

@@ -1,13 +1,18 @@
 package org.toy_project.account.domain;
 
+import io.r2dbc.spi.Clob;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Table("account_image")
 public class AccountImageEntity {
 
@@ -22,8 +27,11 @@ public class AccountImageEntity {
     private String imageUrl;
 
     @Column("visible")
-    private boolean visible;
+    private int visible;
 
-    @Column("account_idx")
+    @Column("account_id")
     private Long accountId;
+
+    @Transient
+    private AccountEntity accountEntity;
 }

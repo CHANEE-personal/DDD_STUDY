@@ -1,6 +1,5 @@
 package org.toy_project.account.adapter.out.persistence;
 
-import java.util.Optional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +11,8 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.toy_project.account.domain.AccountEntity;
+import org.toy_project.account.domain.AccountImageEntity;
+import reactor.core.publisher.Mono;
 
 @ExtendWith(MockitoExtension.class)
 class AccountPersistenceAdapterTest {
@@ -22,6 +23,9 @@ class AccountPersistenceAdapterTest {
     @Mock
     private AccountRepository accountRepository;
 
+    @Mock
+    private AccountImageRepository accountImageRepository;
+
     @Spy
     private AccountMapper accountMapper = Mappers.getMapper(AccountMapper.class);
 
@@ -31,9 +35,14 @@ class AccountPersistenceAdapterTest {
     void loadAccountTest() {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setId(1L);
-//        given(accountRepository.findById(1L)).willReturn(accountEntity);
 
-//        Account account = accountPersistenceAdapter.loadAccount(1L);
-//        Assertions.assertThat(account.getId()).isEqualTo(1L);
+        AccountImageEntity accountImageEntity = new AccountImageEntity();
+        accountImageEntity.setAccountId(1L);
+
+        given(accountRepository.findByAccountId(1L)).willReturn(Mono.just(accountEntity));
+        given(accountImageRepository.findAccountImageEntityByAccountId(1L)).willReturn(Mono.just(accountImageEntity));
+
+        Account account = accountPersistenceAdapter.loadAccount(1L).block();
+        Assertions.assertThat(account.getId()).isEqualTo(1L);
     }
 }

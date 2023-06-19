@@ -23,7 +23,7 @@ public class AccountController {
     @GetMapping("/{accountId}")
     public ResponseEntity<Map<String, Object>> getAccount(@PathVariable Long accountId) {
         Map<String, Object> resultMap = new HashMap<>();
-        Account account = getAccountUseCase.getAccount(accountId);
+        Mono<Account> account = getAccountUseCase.getAccount(accountId);
 
         resultMap.put("account", account);
         return ResponseEntity.ok().body(resultMap);

@@ -15,7 +15,7 @@ class AccountService implements GetAccountUseCase {
 
 
     @Override
-    public Account getAccount(Long id) {
+    public Mono<Account> getAccount(Long id) {
         return loadAccountPort.loadAccount(id);
     }
 }
