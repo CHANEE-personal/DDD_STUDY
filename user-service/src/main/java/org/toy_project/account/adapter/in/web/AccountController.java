@@ -25,7 +25,7 @@ public class AccountController {
         Map<String, Object> resultMap = new HashMap<>();
         Mono<Account> account = getAccountUseCase.getAccount(accountId);
 
-        resultMap.put("account", account);
+        resultMap.put("account", account.block());
         return ResponseEntity.ok().body(resultMap);
     }
 }

@@ -1,4 +1,4 @@
-create table `account`
+create table if not exists `account`
 (
     `idx`            int auto_increment
         primary key,
@@ -12,7 +12,7 @@ create table `account`
 );
 
 -- auto-generated definition
-create table account_image
+create table if not exists `account_image`
 (
     idx         int auto_increment
         primary key,
