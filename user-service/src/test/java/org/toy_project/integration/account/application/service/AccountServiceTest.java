@@ -28,7 +28,7 @@ class AccountServiceTest {
     private GetAccountUseCase getAccountUseCase;
 
     @Autowired
-    private final BasicRelationalConverter basicRelationalConverter;
+    private BasicRelationalConverter basicRelationalConverter;
 
 
     @PostConstruct
