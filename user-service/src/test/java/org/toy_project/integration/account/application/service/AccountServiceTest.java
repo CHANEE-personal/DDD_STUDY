@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.convert.converter.Converter;
@@ -20,12 +21,13 @@ import org.toy_project.account.application.port.in.GetAccountUseCase;
 import reactor.core.publisher.Flux;
 
 @SpringBootTest(properties = {"spring.config.location=classpath:application-test.yml"})
-@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @RequiredArgsConstructor
 class AccountServiceTest {
 
-    private final GetAccountUseCase getAccountUseCase;
+    @Autowired
+    private GetAccountUseCase getAccountUseCase;
 
+    @Autowired
     private final BasicRelationalConverter basicRelationalConverter;
 
 
