@@ -13,13 +13,13 @@ services:
       - .env
     restart: always
 
-  app:
-    container_name: api
+  user-app:
+    container_name: user-service
     build:
-      context: ./
+      context: ./user-service
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "9001:9001"
     depends_on:
       - mysql
     env_file:

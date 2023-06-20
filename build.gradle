@@ -1,0 +1,17 @@
+allprojects {
+    group 'org.toy_project'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = JavaVersion.VERSION_11
+
+    jar {
+        enabled = true
+    }
+}
