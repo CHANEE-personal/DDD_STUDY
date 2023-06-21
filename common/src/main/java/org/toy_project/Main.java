@@ -1,4 +1,4 @@
-package org.example;
+package org.toy_project;
 
 public class Main {
 
