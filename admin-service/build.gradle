@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+dependencies {
+    implementation project(path: ':common', configuration: 'default')
+
+    annotationProcessor(
+            'org.projectlombok:lombok',
+            'org.projectlombok:lombok-mapstruct-binding:0.1.0',
+            'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    )
+
+    compileOnly 'org.projectlombok:lombok'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test:3.2.3.RELEASE'
+    testImplementation 'org.projectlombok:lombok'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
