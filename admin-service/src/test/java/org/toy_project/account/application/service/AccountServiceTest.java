@@ -12,7 +12,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.toy_project.account.adapter.out.persistence.Account;
 import org.toy_project.account.adapter.out.persistence.AccountImage;
 import org.toy_project.account.application.port.out.LoadAccountPort;
-import reactor.core.publisher.Mono;
 
 @ExtendWith(MockitoExtension.class)
 class AccountServiceTest {
