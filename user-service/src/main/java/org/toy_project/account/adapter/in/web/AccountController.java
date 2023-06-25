@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.toy_project.account.adapter.out.persistence.Account;
 import org.toy_project.account.application.port.in.GetAccountUseCase;
+import org.toy_project.response.ApiResponse;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -21,11 +22,11 @@ public class AccountController {
 
 
     @GetMapping("/{accountId}")
-    public ResponseEntity<Map<String, Object>> getAccount(@PathVariable Long accountId) {
+    public ApiResponse<Map<String, Object>> getAccount(@PathVariable Long accountId) {
         Map<String, Object> resultMap = new HashMap<>();
         Mono<Account> account = getAccountUseCase.getAccount(accountId);
 
         resultMap.put("account", account.block());
-        return ResponseEntity.ok().body(resultMap);
+        return ApiResponse.ok(resultMap);
     }
 }
