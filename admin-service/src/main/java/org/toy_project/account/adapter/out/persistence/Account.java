@@ -5,6 +5,8 @@ import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.toy_project.follow.adapter.out.persistence.Follow;
+import org.toy_project.follow.adapter.out.persistence.Follower;
 
 @Getter
 @Setter
@@ -23,4 +25,7 @@ public class Account {
 
     private int followCount;
     private int followerCount;
+
+    private List<Follow> followList = new ArrayList<>();
+    private List<Follower> followerList = new ArrayList<>();
 }

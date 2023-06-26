@@ -11,8 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
+import org.toy_project.follow.domain.FollowEntity;
+import org.toy_project.follow.domain.FollowerEntity;
 
 @Getter
 @Setter
@@ -45,4 +48,10 @@ public class AccountEntity {
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private List<AccountImageEntity> accountImages = new ArrayList<>();
+
+    @OneToMany(mappedBy = "accountFollow", fetch = FetchType.LAZY)
+    private List<FollowEntity> followList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "accountFollower", fetch = FetchType.LAZY)
+    private List<FollowerEntity> followerList = new ArrayList<>();
 }
