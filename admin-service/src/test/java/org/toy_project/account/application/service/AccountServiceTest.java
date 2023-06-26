@@ -69,7 +69,7 @@ class AccountServiceTest {
         Follow follow = new Follow();
         follow.setId(1L);
         follow.setFollowName("ROSE");
-        follow.setAccount(account);
+        follow.setAccountFollow(account);
         follow.setAllow(true);
         followList.add(follow);
 
@@ -95,20 +95,20 @@ class AccountServiceTest {
         List<Follower> followerList = new ArrayList<>();
         Follower firstFollower = new Follower();
         firstFollower.setId(1L);
-        firstFollower.setFollowIdx(1L);
-        firstFollower.setFollowName("ROSE");
+        firstFollower.setAccountFollower(account);
+        firstFollower.setFollowerName("ROSE");
         followerList.add(firstFollower);
 
         Follower secondFollower = new Follower();
         secondFollower.setId(2L);
-        secondFollower.setFollowIdx(1L);
-        secondFollower.setFollowName("JISU");
+        secondFollower.setAccountFollower(account);
+        secondFollower.setFollowerName("JISU");
         followerList.add(secondFollower);
 
         given(loadFollowPort.getFollowerList(1L)).willReturn(followerList);
         List<Follower> getFollowerList = accountService.getFollowerList(1L);
 
-        Assertions.assertThat(getFollowerList.get(0).getFollowName()).isEqualTo("ROSE");
-        Assertions.assertThat(getFollowerList.get(1).getFollowName()).isEqualTo("JISU");
+        Assertions.assertThat(getFollowerList.get(0).getFollowerName()).isEqualTo("ROSE");
+        Assertions.assertThat(getFollowerList.get(1).getFollowerName()).isEqualTo("JISU");
     }
 }

@@ -9,7 +9,6 @@ import org.toy_project.account.adapter.out.persistence.Account;
 public class Follower {
 
     private Long id;
-    private String followName;
-    private Long followIdx;
-    private Account account;
+    private String followerName;
+    private Account accountFollower;
 }

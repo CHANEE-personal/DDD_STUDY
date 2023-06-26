@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.toy_project.account.adapter.out.persistence.Account;
 import org.toy_project.account.domain.AccountEntity;
 
 @Getter
@@ -24,10 +23,10 @@ public class FollowerEntity {
     @Column(name = "idx")
     private Long id;
 
-    @Column(name = "follow_name")
-    private String followName;
+    @Column(name = "follower_name")
+    private String followerName;
 
     @ManyToOne
-    @JoinColumn(columnDefinition = "follow_idx", referencedColumnName = "idx")
-    private AccountEntity account;
+    @JoinColumn(columnDefinition = "account_id", referencedColumnName = "idx")
+    private AccountEntity accountFollower;
 }

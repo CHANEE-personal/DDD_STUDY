@@ -8,5 +8,5 @@ import org.toy_project.follow.domain.FollowEntity;
 @Repository
 public interface FollowRepository extends JpaRepository<FollowEntity, Long> {
 
-    List<FollowEntity> findFollowEntityByAccountId(Long accountId);
+    List<FollowEntity> findFollowEntitiesByAccountId(Long accountId);
 }
