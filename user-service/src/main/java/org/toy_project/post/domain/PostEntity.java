@@ -3,8 +3,12 @@ package org.toy_project.post.domain;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -35,4 +39,7 @@ public class PostEntity {
 
     @Column("visible")
     private boolean visible;
+
+    @Transient
+    private List<PostImageEntity> postImages = new ArrayList<>();
 }

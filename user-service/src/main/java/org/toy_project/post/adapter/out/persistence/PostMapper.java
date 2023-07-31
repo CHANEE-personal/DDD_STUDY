@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @Mapper(componentModel = "spring")
 public interface PostMapper {
 
-//    @Mapping(source = "parent_idx", target = "replies")
+    @Mapping(source = "postImages", target = "postImages")
     Post toPost(PostEntity postEntity);
 
     List<Post> toPostList(List<PostEntity> postEntityList);

@@ -1,13 +1,13 @@
 package org.toy_project.post.application.service;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.toy_project.post.application.port.in.GetPostUseCase;
 import org.toy_project.post.adapter.out.persistence.Post;
 import org.toy_project.post.application.port.out.LoadPostPort;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -24,7 +24,7 @@ class PostService implements GetPostUseCase {
 
 
     @Override
-    public Post getPost(Long id) {
+    public Mono<Post> getPost(Long id) throws ExecutionException, InterruptedException {
         return loadPostPort.loadPost(id);
     }
 }
