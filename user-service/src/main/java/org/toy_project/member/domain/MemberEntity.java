@@ -1,8 +1,12 @@
 package org.toy_project.member.domain;
 
+import java.util.Objects;
+import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -38,4 +42,13 @@ public class MemberEntity {
 
     @Column("email")
     private String email;
+
+
+//    @Override
+//    @Transient
+//    public boolean isNew() {
+//        boolean result = Objects.isNull(id);
+//        this.id = result ? UUID.randomUUID() : this.id;
+//        return result;
+//    }
 }

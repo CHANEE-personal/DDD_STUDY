@@ -22,6 +22,8 @@ public class MemberController {
     @PostMapping
     public ApiResponse<Member> joinMember(@RequestBody MemberEntity memberEntity) {
         Mono<Member> memberMono = joinMemberUseCase.joinMember(memberEntity);
+        System.out.println("===memberMono===");
+        System.out.println(memberMono);
         return ApiResponse.ok(memberMono.block());
     }
 }

@@ -1,5 +1,6 @@
 package org.toy_project.member.adapter.out;
 
+import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
 
